@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "d96bbc99-121d-4cf3-a3d6-5ffd3eaf0516",
+		"name": "JUR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}auth/login",
+							"host": [
+								"{{HOST}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}auth/logout",
+							"host": [
+								"{{HOST}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All users",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}user",
+							"host": [
+								"{{HOST}}user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Super Admin\",\r\n    \"last_name\": \"user\",\r\n    \"email\": \"superadmin@admin.com\",\r\n    \"password\": \"123456789\",\r\n    \"company_name\": \"Senburn\",\r\n    \"role\":\"Stuff Engineer\",\r\n    \"job_start_date\": \"2020-01-01\",\r\n    \"job_end_date\": \"2020-12-31\",\r\n    \"company_description\":\"Senburn is a multinational company\",\r\n    \"organization_name\":\"Blockchain Foundation\",\r\n    \"associated_as\":\"Junior Developer\",\r\n    \"organization_start_date\":\"1980-01-01\",\r\n    \"organization_end_date\":\"2020-12-31\",\r\n    \"organization_description\":\"Senburn organization has many company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user/store",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Admin\",\r\n    \"last_name\": \"user\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"123456789\",\r\n    \"company_name\": \"Senburn\",\r\n    \"role\":\"Stuff Engineer\",\r\n    \"job_start_date\": \"2020-01-01\",\r\n    \"job_end_date\": \"2020-12-31\",\r\n    \"company_description\":\"Senburn is a multinational company\",\r\n    \"organization_name\":\"Blockchain Foundation\",\r\n    \"associated_as\":\"Junior Developer\",\r\n    \"organization_start_date\":\"1980-01-01\",\r\n    \"organization_end_date\":\"2020-12-31\",\r\n    \"organization_description\":\"Senburn organization has many company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user/edit/1",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Admin\",\r\n    \"last_name\": \"user\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"123456789\",\r\n    \"company_name\": \"Senburn\",\r\n    \"role\":\"Stuff Engineer\",\r\n    \"job_start_date\": \"2020-01-01\",\r\n    \"job_end_date\": \"2020-12-31\",\r\n    \"company_description\":\"Senburn is a multinational company\",\r\n    \"organization_name\":\"Blockchain Foundation\",\r\n    \"associated_as\":\"Junior Developer\",\r\n    \"organization_start_date\":\"1980-01-01\",\r\n    \"organization_end_date\":\"2020-12-31\",\r\n    \"organization_description\":\"Senburn organization has many company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user/update/1",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2NTAwMDMyMzgsImV4cCI6MTY1MDAwNjgzOCwibmJmIjoxNjUwMDAzMjM4LCJqdGkiOiJaYnJBNjFWMTNHVHJya3RiIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.KaV1P70tJJJhBwIgiAtOtGEwlGljk6MZ_PrxSpTJ-PE",
+			"type": "string"
+		},
+		{
+			"key": "HOST",
+			"value": "http://127.0.0.1:8000/api/v1/",
+			"type": "string"
+		}
+	]
+}

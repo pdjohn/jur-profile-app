@@ -1,0 +1,22 @@
+.dataTables_info,
+.dataTables_paginate,
+.dataTables_filter{
+    display: none;
+}
+
+li.page-item {
+    display: none;
+}
+
+.page-item:first-child,
+.page-item:nth-child( 2 ),
+.page-item:nth-child( 3 ),
+.page-item:last-child,
+.page-item:nth-last-child( 2 ),
+.page-item:nth-last-child( 3 ),
+.page-item.active {
+
+    display: block;
+}
+
+
