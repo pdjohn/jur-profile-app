@@ -9,7 +9,6 @@ use App\Actions\UserUpdateAction;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
 use http\Env\Response;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
